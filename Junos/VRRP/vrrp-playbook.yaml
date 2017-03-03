@@ -1,0 +1,9 @@
+---
+- name: Generate Config
+  hosts: localhost
+  gather_facts: no
+
+  roles:
+  - Juniper.junos
+  - node1
+  connection: local

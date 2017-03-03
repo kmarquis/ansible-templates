@@ -1,0 +1,9 @@
+{% for interface in node1 %}
+set interfaces {{ interface.name }} description {{ interface.description }}
+set interfaces {{ interface.name }} aggregated-ether-options minimum-links {{ interface['mini-links'] }}
+set interfaces {{ interface.name }} aggregated-ether-options lacp active
+set interfaces {{ interface.name }} unit {{ interface.number }} family inet address {{ interface.ip }} vrrp-group {{ interface.vrrp-grp }} virtual-address {{ interface.virtual-ip }}
+set interfaces {{ interface.name }} unit {{ interface.number }} family inet address {{ interface.ip }} vrrp-group {{ interface.vrrp-grp }} priority {{ interface.priority }}
+set interfaces {{ interface.name }} unit {{ interface.number }} family inet address {{ interface.ip }} vrrp-group {{ interface.vrrp-grp }} preempt
+set interfaces {{ interface.name }} unit {{ interface.number }} family inet address {{ interface.ip }} vrrp-group {{ interface.vrrp-grp }} accept-data
+{% endfor %}
