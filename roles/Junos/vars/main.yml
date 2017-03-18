@@ -1,0 +1,40 @@
+---
+devices:
+  switch1:
+    hostname: switch1
+    interfaces:
+      'ae1':
+        description: switch1 link to somewhere
+        mini_links: 1
+        number: 100
+        ip: 10.10.10.2/29
+        vrrp_grp: 1
+        virtual_ip: 10.10.10.1
+        priority: 200
+      'ae2':
+        description: switch1 link to somewhereelse
+        mini_links: 1
+        number: 100
+        ip: 10.10.20.2/29
+        vrrp_grp: 2
+        virtual_ip: 10.10.20.1
+        priority: 200
+  switch2:
+    hostname: switch2
+    interfaces:
+      'ae1':
+        description: switch2 link to somewhere
+        mini_links: 1
+        number: 100
+        ip: 10.10.10.3/29
+        vrrp_grp: 1
+        virtual_ip: 10.10.10.1
+        priority: 150
+      'ae2':
+        description: switch1 link to somewhereelse
+        mini_links: 1
+        number: 100
+        ip: 10.10.20.3/29
+        vrrp_grp: 2
+        virtual_ip: 10.10.20.1
+        priority: 150

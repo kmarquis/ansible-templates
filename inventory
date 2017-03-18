@@ -1,0 +1,5 @@
+# file:
+[all:vars]
+
+[junos]
+switch[1:2]

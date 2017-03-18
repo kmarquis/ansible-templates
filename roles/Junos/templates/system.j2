@@ -1,0 +1,6 @@
+set system host-name {{inventory_hostname}}
+set system time-zone GMT
+{% for host in syslog_hosts %}
+set system syslog host {{host}} any any
+{% endfor %}
+

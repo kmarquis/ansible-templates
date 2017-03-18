@@ -1,0 +1,9 @@
+{% for interface in devices[inventory_hostname].interfaces %}
+set interfaces {{ interface }} description {{ devices[inventory_hostname].interfaces[interface].description }}
+set interfaces {{ interface }} aggregated-ether-options minimum-links {{ devices[inventory_hostname].interfaces[interface].mini_links }}
+set interfaces {{ interface }} aggregated-ether-options lacp active
+set interfaces {{ interface }} unit {{ devices[inventory_hostname].interfaces[interface].number }} family inet address {{ devices[inventory_hostname].interfaces[interface].ip }} vrrp-group {{ devices[inventory_hostname].interfaces[interface].vrrp_grp }} virtual-address {{ devices[inventory_hostname].interfaces[interface].virtual_ip }}
+set interfaces {{ interface }} unit {{ devices[inventory_hostname].interfaces[interface].number }} family inet address {{ devices[inventory_hostname].interfaces[interface].ip }} vrrp-group {{ devices[inventory_hostname].interfaces[interface].vrrp_grp }} priority {{ devices[inventory_hostname].interfaces[interface].priority}}
+set interfaces {{ interface }} unit {{ devices[inventory_hostname].interfaces[interface].number }} family inet address {{ devices[inventory_hostname].interfaces[interface].ip }} vrrp-group {{ devices[inventory_hostname].interfaces[interface].vrrp_grp }} preempt
+set interfaces {{ interface }} unit {{ devices[inventory_hostname].interfaces[interface].number }} family inet address {{ devices[inventory_hostname].interfaces[interface].ip }} vrrp-group {{ devices[inventory_hostname].interfaces[interface].vrrp_grp }} accept-data
+{% endfor %}
