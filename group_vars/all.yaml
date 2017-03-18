@@ -1,0 +1,4 @@
+build_dir: build
+syslog_hosts:
+  - 10.0.0.12
+  - 10.0.0.13

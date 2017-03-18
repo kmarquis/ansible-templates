@@ -1,7 +1,0 @@
----
-- name: Generate configuration files
-  template:
-    src=node1.setconf.j2
-    dest=/tmp/{{ item.hostname }}.txt
-  with_items: 
-   - "{{ node1 }}" 
