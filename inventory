@@ -3,3 +3,6 @@
 
 [junos]
 switch[1:2]
+
+[cisco]
+switch[1:2]

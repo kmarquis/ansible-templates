@@ -1,7 +1,7 @@
 ---
 devices:
   switch1:
-    hostname: switch1
+    hostname: er01.bbcwn
     interfaces:
       'ae1':
         description: switch1 link to somewhere
@@ -20,7 +20,7 @@ devices:
         virtual_ip: 10.10.20.1
         priority: 200
   switch2:
-    hostname: switch2
+    hostname: er02.bbcwn
     interfaces:
       'ae1':
         description: switch2 link to somewhere

@@ -1,0 +1,6 @@
+---
+- name: Cisco template building
+  template:
+    src=main.j2
+    dest={{ build_dir }}/cisco_device.conf
+

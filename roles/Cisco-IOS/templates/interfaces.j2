@@ -1,0 +1,8 @@
+{% for interface in devices[inventory_hostname].interfaces %}
+interface {{ interface }}
+ description {{ devices[inventory_hostname].interfaces[interface].description }}
+ no switchport
+ ip address {{ devices[inventory_hostname].interfaces[interface].ip }} {{ devices[inventory_hostname].interfaces[interface].mask }}
+ standby {{ devices[inventory_hostname].interfaces[interface].standby }} ip {{ devices[inventory_hostname].interfaces[interface].virtual_ip }}
+ standby {{ devices[inventory_hostname].interfaces[interface].standby }} priority {{ devices[inventory_hostname].interfaces[interface].priority }}
+{% endfor %} 

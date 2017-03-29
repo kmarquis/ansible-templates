@@ -1,0 +1,3 @@
+{% for iproute in devices[inventory_hostname].iproute %}
+ip route {{ iproute }} {{ devices[inventory_hostname].iproute[iproute].mask }} {{ devices[inventory_hostname].iproute[iproute].track }}
+{% endfor %} 

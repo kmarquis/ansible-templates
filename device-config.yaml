@@ -23,11 +23,12 @@
 # =========================================================
 
 - name: Template-build Junos
-  hosts: junos
+  hosts: junos cisco
   connection: local
   gather_facts: no
   roles:
     - Junos
+    - Cisco-IOS
   tasks:
     - name: assembling configurations
       assemble: src={{ build_dir }} dest={{ device_conf }} mode="0644"

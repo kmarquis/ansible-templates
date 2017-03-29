@@ -1,0 +1,6 @@
+{% for router in devices[inventory_hostname].routers %}
+router {{ router }} {{ devices[inventory_hostname].routers[router].process }}
+{% for network in devices[inventory_hostname].networks %}
+ network {{ network }}{{ devices[inventory_hostname].networks[network].wild }} 
+{% endfor %} 
+{% endfor %}

@@ -1,0 +1,60 @@
+---
+devices:
+  switch1:
+    hostname: mcsw0.bbcwn
+    interfaces:
+      'GigabitEthernet3/3':
+        description: "HANDOFF to RB2020"
+        ip: 172.31.46.18
+        mask: 255.255.255.248
+        virtual_ip: 172.31.46.17
+        standby: 20
+        priority: 200
+    routers:
+      'eigrp':
+        process: 1
+    networks:
+      '172.31.46.18':        
+        wild: 0.0.0.7
+      '172.31.46.32': 
+        wild: 0.0.0.31
+      '172.31.46.64':         
+        wild: 0.0.0.31
+    iproute:
+      '172.31.46.32':
+        mask: 255.255.255.224
+        ce-side: 172.31.46.22
+        track: track 1
+      '172.31.46.64':
+        mask: 255.255.255.224
+        ce-side: 172.31.46.22
+        track: track 1
+  switch2:
+    hostname: mcsw1.bbcwn
+    interfaces:
+      'GigabitEthernet3/3':
+        description: "HANDOFF to RB2020"
+        ip: 172.31.46.19
+        mask: 255.255.255.248
+        virtual_ip: 172.31.46.17
+        standby: 20
+        priority: 150
+    routers:
+      'eigrp':
+        process: 1
+    networks:
+      '172.31.46.18':        
+        wild: 0.0.0.7
+      '172.31.46.32': 
+        wild: 0.0.0.31
+      '172.31.46.64':         
+        wild: 0.0.0.31
+    iproute:
+      '172.31.46.32':
+        mask: 255.255.255.224
+        ce-side: 172.31.46.22
+        track: track 2
+      '172.31.46.64':
+        mask: 255.255.255.224
+        ce-side: 172.31.46.22
+        track: track 2
