@@ -1,10 +1,10 @@
 ---
 devices:
   switch1:
-    hostname: mcsw0.bbcwn
+    hostname: mcsw0
     interfaces:
       'GigabitEthernet3/3':
-        description: "HANDOFF to RB2020"
+        description: "HANDOFF to "
         ip: 172.31.46.18
         mask: 255.255.255.248
         virtual_ip: 172.31.46.17
@@ -30,10 +30,10 @@ devices:
         ce-side: 172.31.46.22
         track: track 1
   switch2:
-    hostname: mcsw1.bbcwn
+    hostname: mcsw1
     interfaces:
       'GigabitEthernet3/3':
-        description: "HANDOFF to RB2020"
+        description: "HANDOFF to "
         ip: 172.31.46.19
         mask: 255.255.255.248
         virtual_ip: 172.31.46.17
